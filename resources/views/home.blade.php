@@ -82,14 +82,15 @@
     </div>
   </form>
 
+  @if (count($result) > 0)
   <div class="w-4/12 h-4/6 justify-center flex flex-col gap-6 bg-red-200 p-5 rounded">
-    @if (count($result) > 0)
     @foreach( $result as $line)
     <p class="text-gray-800">
       {{ $line }}
     </p>
     @endforeach
-    @endif
   </div>
+  @endif
+  
 </div>
 @endsection
