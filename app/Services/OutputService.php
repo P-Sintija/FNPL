@@ -21,7 +21,7 @@ class OutputService
         $output = [];
         foreach ($this->characterCollection->getSetCharacters() as $character) {
             $result = $this->resultContent($recurrence, $character, $filePath);
-            $output[] = PHP_EOL . 'First ' . $recurrence->title() . $character->title() . $result;
+            $output[] = PHP_EOL . '>> First ' . $recurrence->title() . $character->title() . $result;
         }
         return $this->createOutput($filePath, $output);
     }
@@ -44,6 +44,6 @@ class OutputService
     private function getFileName(InputService $filePath): string
     {
         $lastSeperator = strrpos($filePath->getInput(), '\\');
-        return 'File: ' . substr($filePath->getInput(), $lastSeperator + 1);
+        return '>> File: ' . substr($filePath->getInput(), $lastSeperator + 1);
     }
 }

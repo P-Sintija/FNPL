@@ -2,6 +2,7 @@
 
 namespace App\Console\Commands;
 
+use App\Models\Input;
 use Illuminate\Console\Command;
 
 class ScriptCommand extends Command
@@ -26,10 +27,11 @@ class ScriptCommand extends Command
     {
         $timeStart = microtime(true);
         $options = $this->options();
-
         require($this->argument('scriptPath'));
-
-        echo $output;
-        echo PHP_EOL . 'Total execution time: ' . (microtime(true) - $timeStart);
+        $data = new Input;
+        $result =  $output . PHP_EOL . '>> Total execution time: ' . (microtime(true) - $timeStart);
+        $data->result = $result;
+        $data->save();
+        echo $result;
     }
 }

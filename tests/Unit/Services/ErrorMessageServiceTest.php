@@ -11,6 +11,6 @@ class ErrorMessageServiceTest extends TestCase
     {
         $errormessageService = new ErrorMessageService;
         $this->assertIsString($errormessageService->errorCode('Condition#2'));
-        $this->assertTrue($errormessageService->errorCode('Condition#3') === 'Error code: 4');
+        $this->assertTrue($errormessageService->errorCode('Condition#3') === '>> Error code: 4');
     }
 }

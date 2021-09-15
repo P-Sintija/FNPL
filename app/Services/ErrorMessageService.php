@@ -13,6 +13,6 @@ class ErrorMessageService
 
     public function errorCode(string $key): string
     {
-        return 'Error code: ' . self::ERROR_CODES[$key];
+        return '>> Error code: ' . self::ERROR_CODES[$key];
     }
 }
